@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:lr="http://adobe.com/lrg/0.0"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" xmlns:lr="http://adobe.com/lrg/0.0"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" xmlns:lr="http://adobe.com/lrg/0.0"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" xmlns:lr="http://adobe.com/lrg/0.0"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Studio Łapiemy Chwile</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <link rel="stylesheet" type="text/css" media="screen" title="Custom Settings" href="assets/css/custom.css" >
+        <script src="assets/js/libs/modernizr.custom.23122.js"></script>
+    </head>
+    <body class=" row-spacing-md" data-pagination-style="scroll" data-target-row-height="381">
+                        <div id="thumbnailContainer">
+            <div class="thumbnails"></div>
+        </div>
+        <div id="loupeContainer" class="show-corners">
+            <div class="background"></div>
+            <div class="image-container"></div>    
+            <div class="side-navigation">
+                <div class="hotspot" id="hotspotPrevLoupe">
+                    <div class="button" id="buttonPrevSideLoupe">
+                        <svg version="1.1" baseProfile="basic" id="svgIconPrevSideLoupe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" xml:space="preserve"><path class="icon custom-colorable" fill="#231F20" d="M0,0l0,50h50V0L0,0z M18.491,25.05l9.707-9.264c0.418-0.399,1.092-0.403,1.506-0.008l1.498,1.43c0.413,0.395,0.41,1.039-0.009,1.438l-6.765,6.456l6.613,6.31c0.41,0.392,0.414,1.024,0.008,1.412l-1.471,1.404c-0.406,0.387-1.068,0.384-1.479-0.008l-6.612-6.311L18.491,25.05z"/></svg>
+                    </div>
+                </div>
+                <div class="hotspot" id="hotspotNextLoupe">
+                    <div class="button" id="buttonNextSideLoupe">
+                        <svg version="1.1" baseProfile="basic" id="svgIconNextSideLoupe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" xml:space="preserve">
+                            <path class="icon custom-colorable" fill="#231F20" d="M0,0v50h50V0H0z M28.513,27.909l-6.612,6.311c-0.411,0.392-1.073,0.395-1.479,0.008l-1.471-1.404 c-0.406-0.388-0.402-1.02,0.008-1.412l6.613-6.31l-6.765-6.456c-0.419-0.399-0.422-1.043-0.009-1.438l1.498-1.43 c0.414-0.395,1.088-0.391,1.506,0.008l9.707,9.264L28.513,27.909z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="lateral-nav-container">
+                <ul class="lateral-nav">
+                    <li id="buttonPrev">
+                        <svg version="1.1" id="svgIconPrevLoupe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0{fill-rule:evenodd;clip-rule:evenodd;fill:#231F20;}
+                            </style>
+                            <path class="icon custom-colorable" d="M25.20105,14.76864l-8.2004,7.773l2.5314,2.3992l5.5858,5.2952c0.3469,0.3289,0.9064,0.3318,1.2497,0.0065
+                                l1.2431-1.1783c0.3429-0.3252,0.3398-0.8555-0.0071-1.1846l-5.5864-5.2948l5.7149-5.4171c0.3535-0.3349,0.3568-0.875,0.0074-1.2063
+                                l-1.2657-1.1995C26.12435,14.43064,25.55435,14.43354,25.20105,14.76864z"/>
+                        </svg>
+                    </li>
+                    <li class="count"><span id="countCurrent"></span> of <span id="countTotal"></span></li>
+                    <li id="buttonNext">
+                        <svg version="1.1" id="svgIconNextLoupe" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0{fill-rule:evenodd;clip-rule:evenodd;fill:#231F20;}
+                            </style>
+                            <path class="icon custom-colorable" d="M19.79895,14.76864l8.2004,7.773l-2.5314,2.3992l-5.5858,5.2952c-0.3469,0.3289-0.9064,0.3318-1.2497,0.0065
+                                l-1.2431-1.1783c-0.3429-0.3252-0.3398-0.8555,0.0071-1.1846l5.5864-5.2948l-5.7149-5.4171
+                                c-0.3535-0.3349-0.3568-0.875-0.0074-1.2063l1.2657-1.1995C18.87565,14.43064,19.44565,14.43354,19.79895,14.76864z"/>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-container">
+                <div id="loupeMeta"></div>
+            </div>
+            <div id="loupeCloseButton">
+                <svg version="1.1" id="svgIconLoupeClose" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+                    <path class="shape-x custom-colorable" d="M14.77881,17.30074l5.212,5.2222l-5.0831,5.0924c-0.3476,0.3484-0.5746,0.7624-0.2308,1.1067l1.5682,1.4763
+                        c0.3436,0.3443,0.8045,0.2596,1.1521-0.0886l5.0825-5.093l5.2119,5.222c0.3536,0.3547,0.9244,0.3578,1.2741,0.0073l1.2677-1.27
+                        c0.3497-0.3507,0.3465-0.9224-0.0071-1.2768l-5.2119-5.2221l5.0828-5.0925c0.3475-0.3485,0.5429-0.8259,0.1994-1.1702
+                        l-1.6474-1.4921c-0.3438-0.3443-0.6936-0.1803-1.0411,0.1679l-5.0828,5.0929l-5.212-5.222
+                        c-0.3537-0.3546-0.9241-0.3577-1.2742-0.007l-1.2672,1.2698C14.42171,16.37464,14.42491,16.94624,14.77881,17.30074z"/>
+                </svg>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var LR = LR || {};
+            LR.images = [                                                                                        {"id": "16676742", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_kom_s_w_-_1", "title": "Podawać ten nr 1 kom św - 1", "caption" : ""},
+                         {"id": "16676747", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_1", "title": "Podawać ten nr 1 Komunia Świeta - 1", "caption" : ""},
+                         {"id": "16677876", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_2", "title": "Podawać ten nr 1 Komunia Świeta - 2", "caption" : ""},
+                         {"id": "16677879", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_3", "title": "Podawać ten nr 1 Komunia Świeta - 3", "caption" : ""},
+                         {"id": "16677880", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_4", "title": "Podawać ten nr 1 Komunia Świeta - 4", "caption" : ""},
+                         {"id": "16677883", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_5", "title": "Podawać ten nr 1 Komunia Świeta - 5", "caption" : ""},
+                         {"id": "16677884", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_6", "title": "Podawać ten nr 1 Komunia Świeta - 6", "caption" : ""},
+                         {"id": "16677886", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_7", "title": "Podawać ten nr 1 Komunia Świeta - 7", "caption" : ""},
+                         {"id": "16677890", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_8", "title": "Podawać ten nr 1 Komunia Świeta - 8", "caption" : ""},
+                         {"id": "16677893", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_9", "title": "Podawać ten nr 1 Komunia Świeta - 9", "caption" : ""},
+                         {"id": "16677897", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_10", "title": "Podawać ten nr 1 Komunia Świeta - 10", "caption" : ""},
+                         {"id": "16677899", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_11", "title": "Podawać ten nr 1 Komunia Świeta - 11", "caption" : ""},
+                         {"id": "16677902", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_12", "title": "Podawać ten nr 1 Komunia Świeta - 12", "caption" : ""},
+                         {"id": "16677905", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_13", "title": "Podawać ten nr 1 Komunia Świeta - 13", "caption" : ""},
+                         {"id": "16677907", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_14", "title": "Podawać ten nr 1 Komunia Świeta - 14", "caption" : ""},
+                         {"id": "16676748", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_15", "title": "Podawać ten nr 1 Komunia Świeta - 15", "caption" : ""},
+                         {"id": "16676749", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_16", "title": "Podawać ten nr 1 Komunia Świeta - 16", "caption" : ""},
+                         {"id": "16676750", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_17", "title": "Podawać ten nr 1 Komunia Świeta - 17", "caption" : ""},
+                         {"id": "16676752", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_18", "title": "Podawać ten nr 1 Komunia Świeta - 18", "caption" : ""},
+                         {"id": "16676755", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_19", "title": "Podawać ten nr 1 Komunia Świeta - 19", "caption" : ""},
+                         {"id": "16676756", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_20", "title": "Podawać ten nr 1 Komunia Świeta - 20", "caption" : ""},
+                         {"id": "16676757", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_21", "title": "Podawać ten nr 1 Komunia Świeta - 21", "caption" : ""},
+                         {"id": "16676759", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_22", "title": "Podawać ten nr 1 Komunia Świeta - 22", "caption" : ""},
+                         {"id": "16676763", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_23", "title": "Podawać ten nr 1 Komunia Świeta - 23", "caption" : ""},
+                         {"id": "16677911", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_24", "title": "Podawać ten nr 1 Komunia Świeta - 24", "caption" : ""},
+                         {"id": "16676764", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_25", "title": "Podawać ten nr 1 Komunia Świeta - 25", "caption" : ""},
+                         {"id": "16676766", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_26", "title": "Podawać ten nr 1 Komunia Świeta - 26", "caption" : ""},
+                         {"id": "16676767", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_27", "title": "Podawać ten nr 1 Komunia Świeta - 27", "caption" : ""},
+                         {"id": "16676769", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_28", "title": "Podawać ten nr 1 Komunia Świeta - 28", "caption" : ""},
+                         {"id": "16676770", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_29", "title": "Podawać ten nr 1 Komunia Świeta - 29", "caption" : ""},
+                         {"id": "16676771", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_30", "title": "Podawać ten nr 1 Komunia Świeta - 30", "caption" : ""},
+                         {"id": "16676781", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_31", "title": "Podawać ten nr 1 Komunia Świeta - 31", "caption" : ""},
+                         {"id": "16676787", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_32", "title": "Podawać ten nr 1 Komunia Świeta - 32", "caption" : ""},
+                         {"id": "16677913", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_33", "title": "Podawać ten nr 1 Komunia Świeta - 33", "caption" : ""},
+                         {"id": "16676789", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_34", "title": "Podawać ten nr 1 Komunia Świeta - 34", "caption" : ""},
+                         {"id": "16677917", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_35", "title": "Podawać ten nr 1 Komunia Świeta - 35", "caption" : ""},
+                         {"id": "16677919", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_36", "title": "Podawać ten nr 1 Komunia Świeta - 36", "caption" : ""},
+                         {"id": "16677922", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_37", "title": "Podawać ten nr 1 Komunia Świeta - 37", "caption" : ""},
+                         {"id": "16676798", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_38", "title": "Podawać ten nr 1 Komunia Świeta - 38", "caption" : ""},
+                         {"id": "16676800", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_39", "title": "Podawać ten nr 1 Komunia Świeta - 39", "caption" : ""},
+                         {"id": "16676804", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_40", "title": "Podawać ten nr 1 Komunia Świeta - 40", "caption" : ""},
+                         {"id": "16676805", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_41", "title": "Podawać ten nr 1 Komunia Świeta - 41", "caption" : ""},
+                         {"id": "16676808", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_42", "title": "Podawać ten nr 1 Komunia Świeta - 42", "caption" : ""},
+                         {"id": "16677923", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_43", "title": "Podawać ten nr 1 Komunia Świeta - 43", "caption" : ""},
+                         {"id": "16677925", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_44", "title": "Podawać ten nr 1 Komunia Świeta - 44", "caption" : ""},
+                         {"id": "16677928", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_45", "title": "Podawać ten nr 1 Komunia Świeta - 45", "caption" : ""},
+                         {"id": "16677930", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_46", "title": "Podawać ten nr 1 Komunia Świeta - 46", "caption" : ""},
+                         {"id": "16677932", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_47", "title": "Podawać ten nr 1 Komunia Świeta - 47", "caption" : ""},
+                         {"id": "16677934", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_48", "title": "Podawać ten nr 1 Komunia Świeta - 48", "caption" : ""},
+                         {"id": "16677935", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_49", "title": "Podawać ten nr 1 Komunia Świeta - 49", "caption" : ""},
+                         {"id": "16677937", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_50", "title": "Podawać ten nr 1 Komunia Świeta - 50", "caption" : ""},
+                         {"id": "16677939", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_51", "title": "Podawać ten nr 1 Komunia Świeta - 51", "caption" : ""},
+                         {"id": "16677941", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_52", "title": "Podawać ten nr 1 Komunia Świeta - 52", "caption" : ""},
+                         {"id": "16677943", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_53", "title": "Podawać ten nr 1 Komunia Świeta - 53", "caption" : ""},
+                         {"id": "16677944", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_54", "title": "Podawać ten nr 1 Komunia Świeta - 54", "caption" : ""},
+                         {"id": "16677946", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_55", "title": "Podawać ten nr 1 Komunia Świeta - 55", "caption" : ""},
+                         {"id": "16677947", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_56", "title": "Podawać ten nr 1 Komunia Świeta - 56", "caption" : ""},
+                         {"id": "16676814", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_57", "title": "Podawać ten nr 1 Komunia Świeta - 57", "caption" : ""},
+                         {"id": "16677948", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_58", "title": "Podawać ten nr 1 Komunia Świeta - 58", "caption" : ""},
+                         {"id": "16677950", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_59", "title": "Podawać ten nr 1 Komunia Świeta - 59", "caption" : ""},
+                         {"id": "16677951", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_60", "title": "Podawać ten nr 1 Komunia Świeta - 60", "caption" : ""},
+                         {"id": "16677953", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_61", "title": "Podawać ten nr 1 Komunia Świeta - 61", "caption" : ""},
+                         {"id": "16677957", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_62", "title": "Podawać ten nr 1 Komunia Świeta - 62", "caption" : ""},
+                         {"id": "16676816", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_63", "title": "Podawać ten nr 1 Komunia Świeta - 63", "caption" : ""},
+                         {"id": "16676818", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_64", "title": "Podawać ten nr 1 Komunia Świeta - 64", "caption" : ""},
+                         {"id": "16677959", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_65", "title": "Podawać ten nr 1 Komunia Świeta - 65", "caption" : ""},
+                         {"id": "16677961", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_66", "title": "Podawać ten nr 1 Komunia Świeta - 66", "caption" : ""},
+                         {"id": "16676825", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_67", "title": "Podawać ten nr 1 Komunia Świeta - 67", "caption" : ""},
+                         {"id": "16676827", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_68", "title": "Podawać ten nr 1 Komunia Świeta - 68", "caption" : ""},
+                         {"id": "16677965", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_69", "title": "Podawać ten nr 1 Komunia Świeta - 69", "caption" : ""},
+                         {"id": "16677968", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_70", "title": "Podawać ten nr 1 Komunia Świeta - 70", "caption" : ""},
+                         {"id": "16677970", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_71", "title": "Podawać ten nr 1 Komunia Świeta - 71", "caption" : ""},
+                         {"id": "16676843", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_72", "title": "Podawać ten nr 1 Komunia Świeta - 72", "caption" : ""},
+                         {"id": "16676849", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_73", "title": "Podawać ten nr 1 Komunia Świeta - 73", "caption" : ""},
+                         {"id": "16676851", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_74", "title": "Podawać ten nr 1 Komunia Świeta - 74", "caption" : ""},
+                         {"id": "16676856", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_75", "title": "Podawać ten nr 1 Komunia Świeta - 75", "caption" : ""},
+                         {"id": "16676859", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_76", "title": "Podawać ten nr 1 Komunia Świeta - 76", "caption" : ""},
+                         {"id": "16676867", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_77", "title": "Podawać ten nr 1 Komunia Świeta - 77", "caption" : ""},
+                         {"id": "16676869", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_78", "title": "Podawać ten nr 1 Komunia Świeta - 78", "caption" : ""},
+                         {"id": "16676872", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_79", "title": "Podawać ten nr 1 Komunia Świeta - 79", "caption" : ""},
+                         {"id": "16676874", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_80", "title": "Podawać ten nr 1 Komunia Świeta - 80", "caption" : ""},
+                         {"id": "16676875", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_81", "title": "Podawać ten nr 1 Komunia Świeta - 81", "caption" : ""},
+                         {"id": "16676878", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_82", "title": "Podawać ten nr 1 Komunia Świeta - 82", "caption" : ""},
+                         {"id": "16676881", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_83", "title": "Podawać ten nr 1 Komunia Świeta - 83", "caption" : ""},
+                         {"id": "16676883", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_84", "title": "Podawać ten nr 1 Komunia Świeta - 84", "caption" : ""},
+                         {"id": "16676885", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_85", "title": "Podawać ten nr 1 Komunia Świeta - 85", "caption" : ""},
+                         {"id": "16676889", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_86", "title": "Podawać ten nr 1 Komunia Świeta - 86", "caption" : ""},
+                         {"id": "16676890", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_87", "title": "Podawać ten nr 1 Komunia Świeta - 87", "caption" : ""},
+                         {"id": "16676893", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_88", "title": "Podawać ten nr 1 Komunia Świeta - 88", "caption" : ""},
+                         {"id": "16676895", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_89", "title": "Podawać ten nr 1 Komunia Świeta - 89", "caption" : ""},
+                         {"id": "16676897", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_90", "title": "Podawać ten nr 1 Komunia Świeta - 90", "caption" : ""},
+                         {"id": "16676899", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_91", "title": "Podawać ten nr 1 Komunia Świeta - 91", "caption" : ""},
+                         {"id": "16676901", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_92", "title": "Podawać ten nr 1 Komunia Świeta - 92", "caption" : ""},
+                         {"id": "16676904", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_93", "title": "Podawać ten nr 1 Komunia Świeta - 93", "caption" : ""},
+                         {"id": "16676907", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_94", "title": "Podawać ten nr 1 Komunia Świeta - 94", "caption" : ""},
+                         {"id": "16676912", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_95", "title": "Podawać ten nr 1 Komunia Świeta - 95", "caption" : ""},
+                         {"id": "16677984", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_96", "title": "Podawać ten nr 1 Komunia Świeta - 96", "caption" : ""},
+                         {"id": "16677987", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_97", "title": "Podawać ten nr 1 Komunia Świeta - 97", "caption" : ""},
+                         {"id": "16677989", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_98", "title": "Podawać ten nr 1 Komunia Świeta - 98", "caption" : ""},
+                         {"id": "16677992", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_99", "title": "Podawać ten nr 1 Komunia Świeta - 99", "caption" : ""},
+                         {"id": "16676915", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_100", "title": "Podawać ten nr 1 Komunia Świeta - 100", "caption" : ""},
+                         {"id": "16676917", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_101", "title": "Podawać ten nr 1 Komunia Świeta - 101", "caption" : ""},
+                         {"id": "16676918", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_102", "title": "Podawać ten nr 1 Komunia Świeta - 102", "caption" : ""},
+                         {"id": "16676919", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_103", "title": "Podawać ten nr 1 Komunia Świeta - 103", "caption" : ""},
+                         {"id": "16676920", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_104", "title": "Podawać ten nr 1 Komunia Świeta - 104", "caption" : ""},
+                         {"id": "16676923", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_105", "title": "Podawać ten nr 1 Komunia Świeta - 105", "caption" : ""},
+                         {"id": "16676927", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_106", "title": "Podawać ten nr 1 Komunia Świeta - 106", "caption" : ""},
+                         {"id": "16676929", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_107", "title": "Podawać ten nr 1 Komunia Świeta - 107", "caption" : ""},
+                         {"id": "16676930", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_108", "title": "Podawać ten nr 1 Komunia Świeta - 108", "caption" : ""},
+                         {"id": "16676932", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_109", "title": "Podawać ten nr 1 Komunia Świeta - 109", "caption" : ""},
+                         {"id": "16676933", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_110", "title": "Podawać ten nr 1 Komunia Świeta - 110", "caption" : ""},
+                         {"id": "16676935", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_111", "title": "Podawać ten nr 1 Komunia Świeta - 111", "caption" : ""},
+                         {"id": "16676937", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_112", "title": "Podawać ten nr 1 Komunia Świeta - 112", "caption" : ""},
+                         {"id": "16676938", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_113", "title": "Podawać ten nr 1 Komunia Świeta - 113", "caption" : ""},
+                         {"id": "16676940", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_114", "title": "Podawać ten nr 1 Komunia Świeta - 114", "caption" : ""},
+                         {"id": "16676943", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_115", "title": "Podawać ten nr 1 Komunia Świeta - 115", "caption" : ""},
+                         {"id": "16676945", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_116", "title": "Podawać ten nr 1 Komunia Świeta - 116", "caption" : ""},
+                         {"id": "16677993", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_117", "title": "Podawać ten nr 1 Komunia Świeta - 117", "caption" : ""},
+                         {"id": "16677995", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_118", "title": "Podawać ten nr 1 Komunia Świeta - 118", "caption" : ""},
+                         {"id": "16677997", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_119", "title": "Podawać ten nr 1 Komunia Świeta - 119", "caption" : ""},
+                         {"id": "16676948", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_120", "title": "Podawać ten nr 1 Komunia Świeta - 120", "caption" : ""},
+                         {"id": "16677999", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_121", "title": "Podawać ten nr 1 Komunia Świeta - 121", "caption" : ""},
+                         {"id": "16678000", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_122", "title": "Podawać ten nr 1 Komunia Świeta - 122", "caption" : ""},
+                         {"id": "16676954", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_123", "title": "Podawać ten nr 1 Komunia Świeta - 123", "caption" : ""},
+                         {"id": "16676955", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_124", "title": "Podawać ten nr 1 Komunia Świeta - 124", "caption" : ""},
+                         {"id": "16676956", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_125", "title": "Podawać ten nr 1 Komunia Świeta - 125", "caption" : ""},
+                         {"id": "16676957", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_126", "title": "Podawać ten nr 1 Komunia Świeta - 126", "caption" : ""},
+                         {"id": "16676959", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_127", "title": "Podawać ten nr 1 Komunia Świeta - 127", "caption" : ""},
+                         {"id": "16676960", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_128", "title": "Podawać ten nr 1 Komunia Świeta - 128", "caption" : ""},
+                         {"id": "16676967", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_129", "title": "Podawać ten nr 1 Komunia Świeta - 129", "caption" : ""},
+                         {"id": "16676968", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_130", "title": "Podawać ten nr 1 Komunia Świeta - 130", "caption" : ""},
+                         {"id": "16676969", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_131", "title": "Podawać ten nr 1 Komunia Świeta - 131", "caption" : ""},
+                         {"id": "16676970", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_132", "title": "Podawać ten nr 1 Komunia Świeta - 132", "caption" : ""},
+                         {"id": "16676972", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_133", "title": "Podawać ten nr 1 Komunia Świeta - 133", "caption" : ""},
+                         {"id": "16676975", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_134", "title": "Podawać ten nr 1 Komunia Świeta - 134", "caption" : ""},
+                         {"id": "16676976", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_135", "title": "Podawać ten nr 1 Komunia Świeta - 135", "caption" : ""},
+                         {"id": "16676978", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_136", "title": "Podawać ten nr 1 Komunia Świeta - 136", "caption" : ""},
+                         {"id": "16676980", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_137", "title": "Podawać ten nr 1 Komunia Świeta - 137", "caption" : ""},
+                         {"id": "16676981", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_138", "title": "Podawać ten nr 1 Komunia Świeta - 138", "caption" : ""},
+                         {"id": "16676983", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_139", "title": "Podawać ten nr 1 Komunia Świeta - 139", "caption" : ""},
+                         {"id": "16676985", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_140", "title": "Podawać ten nr 1 Komunia Świeta - 140", "caption" : ""},
+                         {"id": "16676990", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_141", "title": "Podawać ten nr 1 Komunia Świeta - 141", "caption" : ""},
+                         {"id": "16676993", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_142", "title": "Podawać ten nr 1 Komunia Świeta - 142", "caption" : ""},
+                         {"id": "16676994", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_143", "title": "Podawać ten nr 1 Komunia Świeta - 143", "caption" : ""},
+                         {"id": "16676996", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_144", "title": "Podawać ten nr 1 Komunia Świeta - 144", "caption" : ""},
+                         {"id": "16676998", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_145", "title": "Podawać ten nr 1 Komunia Świeta - 145", "caption" : ""},
+                         {"id": "16677006", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_146", "title": "Podawać ten nr 1 Komunia Świeta - 146", "caption" : ""},
+                         {"id": "16677008", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_147", "title": "Podawać ten nr 1 Komunia Świeta - 147", "caption" : ""},
+                         {"id": "16677012", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_148", "title": "Podawać ten nr 1 Komunia Świeta - 148", "caption" : ""},
+                         {"id": "16677017", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_149", "title": "Podawać ten nr 1 Komunia Świeta - 149", "caption" : ""},
+                         {"id": "16677020", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_150", "title": "Podawać ten nr 1 Komunia Świeta - 150", "caption" : ""},
+                         {"id": "16677021", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_151", "title": "Podawać ten nr 1 Komunia Świeta - 151", "caption" : ""},
+                         {"id": "16677031", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_152", "title": "Podawać ten nr 1 Komunia Świeta - 152", "caption" : ""},
+                         {"id": "16678001", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_153", "title": "Podawać ten nr 1 Komunia Świeta - 153", "caption" : ""},
+                         {"id": "16678003", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_154", "title": "Podawać ten nr 1 Komunia Świeta - 154", "caption" : ""},
+                         {"id": "16677036", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_155", "title": "Podawać ten nr 1 Komunia Świeta - 155", "caption" : ""},
+                         {"id": "16677039", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_156", "title": "Podawać ten nr 1 Komunia Świeta - 156", "caption" : ""},
+                         {"id": "16678005", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_157", "title": "Podawać ten nr 1 Komunia Świeta - 157", "caption" : ""},
+                         {"id": "16677041", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_158", "title": "Podawać ten nr 1 Komunia Świeta - 158", "caption" : ""},
+                         {"id": "16678007", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_159", "title": "Podawać ten nr 1 Komunia Świeta - 159", "caption" : ""},
+                         {"id": "16678009", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_160", "title": "Podawać ten nr 1 Komunia Świeta - 160", "caption" : ""},
+                         {"id": "16677050", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_161", "title": "Podawać ten nr 1 Komunia Świeta - 161", "caption" : ""},
+                         {"id": "16677052", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_162", "title": "Podawać ten nr 1 Komunia Świeta - 162", "caption" : ""},
+                         {"id": "16677053", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_163", "title": "Podawać ten nr 1 Komunia Świeta - 163", "caption" : ""},
+                         {"id": "16677055", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_165", "title": "Podawać ten nr 1 Komunia Świeta - 165", "caption" : ""},
+                         {"id": "16677057", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_166", "title": "Podawać ten nr 1 Komunia Świeta - 166", "caption" : ""},
+                         {"id": "16677062", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_167", "title": "Podawać ten nr 1 Komunia Świeta - 167", "caption" : ""},
+                         {"id": "16677064", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_168", "title": "Podawać ten nr 1 Komunia Świeta - 168", "caption" : ""},
+                         {"id": "16677067", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_169", "title": "Podawać ten nr 1 Komunia Świeta - 169", "caption" : ""},
+                         {"id": "16677068", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_170", "title": "Podawać ten nr 1 Komunia Świeta - 170", "caption" : ""},
+                         {"id": "16677070", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_171", "title": "Podawać ten nr 1 Komunia Świeta - 171", "caption" : ""},
+                         {"id": "16677072", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_172", "title": "Podawać ten nr 1 Komunia Świeta - 172", "caption" : ""},
+                         {"id": "16677075", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_173", "title": "Podawać ten nr 1 Komunia Świeta - 173", "caption" : ""},
+                         {"id": "16677078", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_174", "title": "Podawać ten nr 1 Komunia Świeta - 174", "caption" : ""},
+                         {"id": "16677080", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_175", "title": "Podawać ten nr 1 Komunia Świeta - 175", "caption" : ""},
+                         {"id": "16677081", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_176", "title": "Podawać ten nr 1 Komunia Świeta - 176", "caption" : ""},
+                         {"id": "16678011", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_177", "title": "Podawać ten nr 1 Komunia Świeta - 177", "caption" : ""},
+                         {"id": "16678013", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_178", "title": "Podawać ten nr 1 Komunia Świeta - 178", "caption" : ""},
+                         {"id": "16677086", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_179", "title": "Podawać ten nr 1 Komunia Świeta - 179", "caption" : ""},
+                         {"id": "16677087", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_180", "title": "Podawać ten nr 1 Komunia Świeta - 180", "caption" : ""},
+                         {"id": "16677088", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_181", "title": "Podawać ten nr 1 Komunia Świeta - 181", "caption" : ""},
+                         {"id": "16677091", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_182", "title": "Podawać ten nr 1 Komunia Świeta - 182", "caption" : ""},
+                         {"id": "16677093", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_183", "title": "Podawać ten nr 1 Komunia Świeta - 183", "caption" : ""},
+                         {"id": "16677096", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_184", "title": "Podawać ten nr 1 Komunia Świeta - 184", "caption" : ""},
+                         {"id": "16677097", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_185", "title": "Podawać ten nr 1 Komunia Świeta - 185", "caption" : ""},
+                         {"id": "16677099", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_186", "title": "Podawać ten nr 1 Komunia Świeta - 186", "caption" : ""},
+                         {"id": "16677101", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_187", "title": "Podawać ten nr 1 Komunia Świeta - 187", "caption" : ""},
+                         {"id": "16677104", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_188", "title": "Podawać ten nr 1 Komunia Świeta - 188", "caption" : ""},
+                         {"id": "16677105", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_189", "title": "Podawać ten nr 1 Komunia Świeta - 189", "caption" : ""},
+                         {"id": "16677107", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_190", "title": "Podawać ten nr 1 Komunia Świeta - 190", "caption" : ""},
+                         {"id": "16678015", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_191", "title": "Podawać ten nr 1 Komunia Świeta - 191", "caption" : ""},
+                         {"id": "16677109", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_192", "title": "Podawać ten nr 1 Komunia Świeta - 192", "caption" : ""},
+                         {"id": "16677110", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_193", "title": "Podawać ten nr 1 Komunia Świeta - 193", "caption" : ""},
+                         {"id": "16677112", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_194", "title": "Podawać ten nr 1 Komunia Świeta - 194", "caption" : ""},
+                         {"id": "16678019", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_195", "title": "Podawać ten nr 1 Komunia Świeta - 195", "caption" : ""},
+                         {"id": "16677114", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_196", "title": "Podawać ten nr 1 Komunia Świeta - 196", "caption" : ""},
+                         {"id": "16677116", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_197", "title": "Podawać ten nr 1 Komunia Świeta - 197", "caption" : ""},
+                         {"id": "16677120", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_198", "title": "Podawać ten nr 1 Komunia Świeta - 198", "caption" : ""},
+                         {"id": "16677121", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_199", "title": "Podawać ten nr 1 Komunia Świeta - 199", "caption" : ""},
+                         {"id": "16678020", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_200", "title": "Podawać ten nr 1 Komunia Świeta - 200", "caption" : ""},
+                         {"id": "16678021", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_201", "title": "Podawać ten nr 1 Komunia Świeta - 201", "caption" : ""},
+                         {"id": "16677132", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_202", "title": "Podawać ten nr 1 Komunia Świeta - 202", "caption" : ""},
+                         {"id": "16677134", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_203", "title": "Podawać ten nr 1 Komunia Świeta - 203", "caption" : ""},
+                         {"id": "16677137", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_204", "title": "Podawać ten nr 1 Komunia Świeta - 204", "caption" : ""},
+                         {"id": "16678022", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_205", "title": "Podawać ten nr 1 Komunia Świeta - 205", "caption" : ""},
+                         {"id": "16677141", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_206", "title": "Podawać ten nr 1 Komunia Świeta - 206", "caption" : ""},
+                         {"id": "16677143", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_207", "title": "Podawać ten nr 1 Komunia Świeta - 207", "caption" : ""},
+                         {"id": "16677145", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_208", "title": "Podawać ten nr 1 Komunia Świeta - 208", "caption" : ""},
+                         {"id": "16678031", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_209", "title": "Podawać ten nr 1 Komunia Świeta - 209", "caption" : ""},
+                         {"id": "16677150", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_210", "title": "Podawać ten nr 1 Komunia Świeta - 210", "caption" : ""},
+                         {"id": "16677152", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_211", "title": "Podawać ten nr 1 Komunia Świeta - 211", "caption" : ""},
+                         {"id": "16677153", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_212", "title": "Podawać ten nr 1 Komunia Świeta - 212", "caption" : ""},
+                         {"id": "16677156", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_213", "title": "Podawać ten nr 1 Komunia Świeta - 213", "caption" : ""},
+                         {"id": "16677163", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_214", "title": "Podawać ten nr 1 Komunia Świeta - 214", "caption" : ""},
+                         {"id": "16677165", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_215", "title": "Podawać ten nr 1 Komunia Świeta - 215", "caption" : ""},
+                         {"id": "16677167", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_216", "title": "Podawać ten nr 1 Komunia Świeta - 216", "caption" : ""},
+                         {"id": "16677170", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_217", "title": "Podawać ten nr 1 Komunia Świeta - 217", "caption" : ""},
+                         {"id": "16677171", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_218", "title": "Podawać ten nr 1 Komunia Świeta - 218", "caption" : ""},
+                         {"id": "16677174", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_219", "title": "Podawać ten nr 1 Komunia Świeta - 219", "caption" : ""},
+                         {"id": "16677176", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_220", "title": "Podawać ten nr 1 Komunia Świeta - 220", "caption" : ""},
+                         {"id": "16677177", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_221", "title": "Podawać ten nr 1 Komunia Świeta - 221", "caption" : ""},
+                         {"id": "16677180", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_222", "title": "Podawać ten nr 1 Komunia Świeta - 222", "caption" : ""},
+                         {"id": "16677181", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_223", "title": "Podawać ten nr 1 Komunia Świeta - 223", "caption" : ""},
+                         {"id": "16677183", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_224", "title": "Podawać ten nr 1 Komunia Świeta - 224", "caption" : ""},
+                         {"id": "16677185", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_225", "title": "Podawać ten nr 1 Komunia Świeta - 225", "caption" : ""},
+                         {"id": "16677187", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_226", "title": "Podawać ten nr 1 Komunia Świeta - 226", "caption" : ""},
+                         {"id": "16677188", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_227", "title": "Podawać ten nr 1 Komunia Świeta - 227", "caption" : ""},
+                         {"id": "16677192", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_228", "title": "Podawać ten nr 1 Komunia Świeta - 228", "caption" : ""},
+                         {"id": "16677193", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_229", "title": "Podawać ten nr 1 Komunia Świeta - 229", "caption" : ""},
+                         {"id": "16677194", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_230", "title": "Podawać ten nr 1 Komunia Świeta - 230", "caption" : ""},
+                         {"id": "16677197", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_231", "title": "Podawać ten nr 1 Komunia Świeta - 231", "caption" : ""},
+                         {"id": "16677200", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_232", "title": "Podawać ten nr 1 Komunia Świeta - 232", "caption" : ""},
+                         {"id": "16678033", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_233", "title": "Podawać ten nr 1 Komunia Świeta - 233", "caption" : ""},
+                         {"id": "16678034", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_234", "title": "Podawać ten nr 1 Komunia Świeta - 234", "caption" : ""},
+                         {"id": "16678036", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_235", "title": "Podawać ten nr 1 Komunia Świeta - 235", "caption" : ""},
+                         {"id": "16678037", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_236", "title": "Podawać ten nr 1 Komunia Świeta - 236", "caption" : ""},
+                         {"id": "16678039", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_237", "title": "Podawać ten nr 1 Komunia Świeta - 237", "caption" : ""},
+                         {"id": "16677212", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_238", "title": "Podawać ten nr 1 Komunia Świeta - 238", "caption" : ""},
+                         {"id": "16677214", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_239", "title": "Podawać ten nr 1 Komunia Świeta - 239", "caption" : ""},
+                         {"id": "16677215", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_240", "title": "Podawać ten nr 1 Komunia Świeta - 240", "caption" : ""},
+                         {"id": "16677216", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_241", "title": "Podawać ten nr 1 Komunia Świeta - 241", "caption" : ""},
+                         {"id": "16677218", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_242", "title": "Podawać ten nr 1 Komunia Świeta - 242", "caption" : ""},
+                         {"id": "16677220", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_243", "title": "Podawać ten nr 1 Komunia Świeta - 243", "caption" : ""},
+                         {"id": "16677221", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_244", "title": "Podawać ten nr 1 Komunia Świeta - 244", "caption" : ""},
+                         {"id": "16677224", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_245", "title": "Podawać ten nr 1 Komunia Świeta - 245", "caption" : ""},
+                         {"id": "16677228", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_246", "title": "Podawać ten nr 1 Komunia Świeta - 246", "caption" : ""},
+                         {"id": "16677234", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_247", "title": "Podawać ten nr 1 Komunia Świeta - 247", "caption" : ""},
+                         {"id": "16677236", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_248", "title": "Podawać ten nr 1 Komunia Świeta - 248", "caption" : ""},
+                         {"id": "16677238", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_249", "title": "Podawać ten nr 1 Komunia Świeta - 249", "caption" : ""},
+                         {"id": "16677240", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_250", "title": "Podawać ten nr 1 Komunia Świeta - 250", "caption" : ""},
+                         {"id": "16677244", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_251", "title": "Podawać ten nr 1 Komunia Świeta - 251", "caption" : ""},
+                         {"id": "16677246", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_252", "title": "Podawać ten nr 1 Komunia Świeta - 252", "caption" : ""},
+                         {"id": "16677250", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_253", "title": "Podawać ten nr 1 Komunia Świeta - 253", "caption" : ""},
+                         {"id": "16677252", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_254", "title": "Podawać ten nr 1 Komunia Świeta - 254", "caption" : ""},
+                         {"id": "16677257", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_255", "title": "Podawać ten nr 1 Komunia Świeta - 255", "caption" : ""},
+                         {"id": "16677260", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_256", "title": "Podawać ten nr 1 Komunia Świeta - 256", "caption" : ""},
+                         {"id": "16677265", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_257", "title": "Podawać ten nr 1 Komunia Świeta - 257", "caption" : ""},
+                         {"id": "16677267", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_258", "title": "Podawać ten nr 1 Komunia Świeta - 258", "caption" : ""},
+                         {"id": "16677268", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_259", "title": "Podawać ten nr 1 Komunia Świeta - 259", "caption" : ""},
+                         {"id": "16677271", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_260", "title": "Podawać ten nr 1 Komunia Świeta - 260", "caption" : ""},
+                         {"id": "16677272", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_261", "title": "Podawać ten nr 1 Komunia Świeta - 261", "caption" : ""},
+                         {"id": "16677275", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_262", "title": "Podawać ten nr 1 Komunia Świeta - 262", "caption" : ""},
+                         {"id": "16677277", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_263", "title": "Podawać ten nr 1 Komunia Świeta - 263", "caption" : ""},
+                         {"id": "16677280", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_264", "title": "Podawać ten nr 1 Komunia Świeta - 264", "caption" : ""},
+                         {"id": "16677282", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_265", "title": "Podawać ten nr 1 Komunia Świeta - 265", "caption" : ""},
+                         {"id": "16677285", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_266", "title": "Podawać ten nr 1 Komunia Świeta - 266", "caption" : ""},
+                         {"id": "16677287", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_267", "title": "Podawać ten nr 1 Komunia Świeta - 267", "caption" : ""},
+                         {"id": "16677293", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_268", "title": "Podawać ten nr 1 Komunia Świeta - 268", "caption" : ""},
+                         {"id": "16677296", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_269", "title": "Podawać ten nr 1 Komunia Świeta - 269", "caption" : ""},
+                         {"id": "16677300", "largeWidth": "799", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_270", "title": "Podawać ten nr 1 Komunia Świeta - 270", "caption" : ""},
+                         {"id": "16677302", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_271", "title": "Podawać ten nr 1 Komunia Świeta - 271", "caption" : ""},
+                         {"id": "16677305", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_272", "title": "Podawać ten nr 1 Komunia Świeta - 272", "caption" : ""},
+                         {"id": "16677307", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_273", "title": "Podawać ten nr 1 Komunia Świeta - 273", "caption" : ""},
+                         {"id": "16677309", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_274", "title": "Podawać ten nr 1 Komunia Świeta - 274", "caption" : ""},
+                         {"id": "16677312", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_275", "title": "Podawać ten nr 1 Komunia Świeta - 275", "caption" : ""},
+                         {"id": "16677313", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_276", "title": "Podawać ten nr 1 Komunia Świeta - 276", "caption" : ""},
+                         {"id": "16677316", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_277", "title": "Podawać ten nr 1 Komunia Świeta - 277", "caption" : ""},
+                         {"id": "16677317", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_278", "title": "Podawać ten nr 1 Komunia Świeta - 278", "caption" : ""},
+                         {"id": "16677320", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_279", "title": "Podawać ten nr 1 Komunia Świeta - 279", "caption" : ""},
+                         {"id": "16677322", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_280", "title": "Podawać ten nr 1 Komunia Świeta - 280", "caption" : ""},
+                         {"id": "16677324", "largeWidth": "799", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_281", "title": "Podawać ten nr 1 Komunia Świeta - 281", "caption" : ""},
+                         {"id": "16677325", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_282", "title": "Podawać ten nr 1 Komunia Świeta - 282", "caption" : ""},
+                         {"id": "16677327", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_283", "title": "Podawać ten nr 1 Komunia Świeta - 283", "caption" : ""},
+                         {"id": "16677329", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_284", "title": "Podawać ten nr 1 Komunia Świeta - 284", "caption" : ""},
+                         {"id": "16677332", "largeWidth": "799", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_285", "title": "Podawać ten nr 1 Komunia Świeta - 285", "caption" : ""},
+                         {"id": "16677333", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_286", "title": "Podawać ten nr 1 Komunia Świeta - 286", "caption" : ""},
+                         {"id": "16677335", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_287", "title": "Podawać ten nr 1 Komunia Świeta - 287", "caption" : ""},
+                         {"id": "16677336", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_288", "title": "Podawać ten nr 1 Komunia Świeta - 288", "caption" : ""},
+                         {"id": "16677337", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_289", "title": "Podawać ten nr 1 Komunia Świeta - 289", "caption" : ""},
+                         {"id": "16677345", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_290", "title": "Podawać ten nr 1 Komunia Świeta - 290", "caption" : ""},
+                         {"id": "16677346", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_291", "title": "Podawać ten nr 1 Komunia Świeta - 291", "caption" : ""},
+                         {"id": "16677353", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_292", "title": "Podawać ten nr 1 Komunia Świeta - 292", "caption" : ""},
+                         {"id": "16677355", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_293", "title": "Podawać ten nr 1 Komunia Świeta - 293", "caption" : ""},
+                         {"id": "16677357", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_294", "title": "Podawać ten nr 1 Komunia Świeta - 294", "caption" : ""},
+                         {"id": "16678042", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_295", "title": "Podawać ten nr 1 Komunia Świeta - 295", "caption" : ""},
+                         {"id": "16677359", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_296", "title": "Podawać ten nr 1 Komunia Świeta - 296", "caption" : ""},
+                         {"id": "16678043", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_297", "title": "Podawać ten nr 1 Komunia Świeta - 297", "caption" : ""},
+                         {"id": "16678044", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_298", "title": "Podawać ten nr 1 Komunia Świeta - 298", "caption" : ""},
+                         {"id": "16677376", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_299", "title": "Podawać ten nr 1 Komunia Świeta - 299", "caption" : ""},
+                         {"id": "16905381", "largeWidth": "1200", "largeHeight": "675", "exportFilename": "1_Komunia_S_wieta_-_299_1", "title": "Podawać ten nr 1 Komunia Świeta - 299", "caption" : ""},
+                         {"id": "16677378", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_300", "title": "Podawać ten nr 1 Komunia Świeta - 300", "caption" : ""},
+                         {"id": "16677383", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_301", "title": "Podawać ten nr 1 Komunia Świeta - 301", "caption" : ""},
+                         {"id": "16678048", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_302", "title": "Podawać ten nr 1 Komunia Świeta - 302", "caption" : ""},
+                         {"id": "16678050", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_303", "title": "Podawać ten nr 1 Komunia Świeta - 303", "caption" : ""},
+                         {"id": "16678053", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_304", "title": "Podawać ten nr 1 Komunia Świeta - 304", "caption" : ""},
+                         {"id": "16678055", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_305", "title": "Podawać ten nr 1 Komunia Świeta - 305", "caption" : ""},
+                         {"id": "16678057", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_306", "title": "Podawać ten nr 1 Komunia Świeta - 306", "caption" : ""},
+                         {"id": "16678059", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_307", "title": "Podawać ten nr 1 Komunia Świeta - 307", "caption" : ""},
+                         {"id": "16678061", "largeWidth": "801", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_308", "title": "Podawać ten nr 1 Komunia Świeta - 308", "caption" : ""},
+                         {"id": "16678065", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_309", "title": "Podawać ten nr 1 Komunia Świeta - 309", "caption" : ""},
+                         {"id": "16678069", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_311", "title": "Podawać ten nr 1 Komunia Świeta - 311", "caption" : ""},
+                         {"id": "16678072", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_312", "title": "Podawać ten nr 1 Komunia Świeta - 312", "caption" : ""},
+                         {"id": "16678074", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_313", "title": "Podawać ten nr 1 Komunia Świeta - 313", "caption" : ""},
+                         {"id": "16678078", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_314", "title": "Podawać ten nr 1 Komunia Świeta - 314", "caption" : ""},
+                         {"id": "16678080", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_315", "title": "Podawać ten nr 1 Komunia Świeta - 315", "caption" : ""},
+                         {"id": "16678082", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_316", "title": "Podawać ten nr 1 Komunia Świeta - 316", "caption" : ""},
+                         {"id": "16678086", "largeWidth": "801", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_317", "title": "Podawać ten nr 1 Komunia Świeta - 317", "caption" : ""},
+                         {"id": "16678088", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_318", "title": "Podawać ten nr 1 Komunia Świeta - 318", "caption" : ""},
+                         {"id": "16678090", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_319", "title": "Podawać ten nr 1 Komunia Świeta - 319", "caption" : ""},
+                         {"id": "16678092", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_320", "title": "Podawać ten nr 1 Komunia Świeta - 320", "caption" : ""},
+                         {"id": "16678095", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_321", "title": "Podawać ten nr 1 Komunia Świeta - 321", "caption" : ""},
+                         {"id": "16678098", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_322", "title": "Podawać ten nr 1 Komunia Świeta - 322", "caption" : ""},
+                         {"id": "16678101", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_323", "title": "Podawać ten nr 1 Komunia Świeta - 323", "caption" : ""},
+                         {"id": "16678103", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_324", "title": "Podawać ten nr 1 Komunia Świeta - 324", "caption" : ""},
+                         {"id": "16678106", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_325", "title": "Podawać ten nr 1 Komunia Świeta - 325", "caption" : ""},
+                         {"id": "16678108", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_326", "title": "Podawać ten nr 1 Komunia Świeta - 326", "caption" : ""},
+                         {"id": "16678110", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_327", "title": "Podawać ten nr 1 Komunia Świeta - 327", "caption" : ""},
+                         {"id": "16678113", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_328", "title": "Podawać ten nr 1 Komunia Świeta - 328", "caption" : ""},
+                         {"id": "16678115", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_329", "title": "Podawać ten nr 1 Komunia Świeta - 329", "caption" : ""},
+                         {"id": "16678120", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_330", "title": "Podawać ten nr 1 Komunia Świeta - 330", "caption" : ""},
+                         {"id": "16678123", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_331", "title": "Podawać ten nr 1 Komunia Świeta - 331", "caption" : ""},
+                         {"id": "16677386", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_332", "title": "Podawać ten nr 1 Komunia Świeta - 332", "caption" : ""},
+                         {"id": "16677389", "largeWidth": "800", "largeHeight": "1200", "exportFilename": "1_Komunia_S_wieta_-_333", "title": "Podawać ten nr 1 Komunia Świeta - 333", "caption" : ""},
+                         {"id": "16678125", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_334", "title": "Podawać ten nr 1 Komunia Świeta - 334", "caption" : ""},
+                         {"id": "16678127", "largeWidth": "1200", "largeHeight": "800", "exportFilename": "1_Komunia_S_wieta_-_335", "title": "Podawać ten nr 1 Komunia Świeta - 335", "caption" : ""},
+                                    ]        </script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="assets/js/libs/jquery.velocity.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
